@@ -1,0 +1,10 @@
+.page {
+  width: 1440px;
+  height: 822px;
+}
+
+.page__content {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+}
