@@ -1,6 +1,7 @@
 // src/PomodoroTimer.js
 import React, { useState, useEffect } from "react";
 import "./PomodoroTimer.css";
+import alarmSound from "./bell.mp3";
 
 const PomodoroTimer = () => {
   const [minutes, setMinutes] = useState(25);
@@ -8,7 +9,7 @@ const PomodoroTimer = () => {
   const [isActive, setIsActive] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
 
-  const audio = new Audio("../../assets/alarm.mp3");
+  const audio = new Audio(alarmSound);
   useEffect(() => {
     let timer;
     if (isActive) {
