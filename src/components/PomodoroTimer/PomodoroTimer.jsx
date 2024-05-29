@@ -8,6 +8,7 @@ const PomodoroTimer = () => {
   const [isActive, setIsActive] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
 
+  const audio = new Audio("../../assets/alarm.mp3");
   useEffect(() => {
     let timer;
     if (isActive) {
@@ -16,6 +17,7 @@ const PomodoroTimer = () => {
           setSeconds(seconds - 1);
         } else if (seconds === 0) {
           if (minutes === 0) {
+            audio.play();
             setIsBreak(!isBreak);
             setMinutes(isBreak ? 25 : 5);
             setSeconds(0);
@@ -55,7 +57,7 @@ const PomodoroTimer = () => {
 
   return (
     <div className="pomodoro-timer">
-      <h1>{isBreak ? "Break Time!" : "Work Time!"}</h1>
+      <h1 className="break-status">{isBreak ? "Break Time!" : "Work Time!"}</h1>
       <div className="time">
         {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
       </div>
