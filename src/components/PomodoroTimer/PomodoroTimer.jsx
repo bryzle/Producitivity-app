@@ -38,8 +38,8 @@ const PomodoroTimer = () => {
 
   const resetTimer = () => {
     setIsActive(false);
-    setMinutes(0);
-    setSeconds(1);
+    setMinutes(25);
+    setSeconds(0);
     setIsBreak(false);
   };
 
